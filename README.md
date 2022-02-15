@@ -84,7 +84,7 @@ cd /validation/parameters/
 python3 generate_openx.py
 ```
 
-* This will execute OpenX files in Esmini OpenSCENARIO player. AT the moment we are running esmini headless as we haven't added GUI to docker.
+* This step will execute OpenX files in Esmini OpenSCENARIO player and generate date for plotting. At the moment we are running esmini headless as we haven't added GUI to docker.
 
 ```
 python3 esmini_data.py
