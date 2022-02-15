@@ -1,0 +1,55 @@
+<package format="2">
+  <name>h264_bag_playback</name>
+  <version>0.0.1</version>
+  <description>Project to synchronise the playback of h264 files and ros bags with frame_info messages included.</description>
+  <maintainer email="s.worrall@acfr.usyd.edu.au">Stewart Worrall</maintainer>
+  <author>Stewart Worrall</author>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>nodelet</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>dataset_msgs</depend>
+  <depend>rosbag</depend>
+  <depend>rosbag_storage</depend>
+  <depend>cv_bridge</depend>
+  <depend>gmsl_frame_msg</depend>
+  <depend>image_transport</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_sensor_msgs</depend>
+
+<!--
+  <build_depend>nodelet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rosbag</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>gmsl_frame_msg</build_depend>
+  <build_depend>image_transport</build_depend>
+
+
+  <run_depend>nodelet</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rosbag</run_depend>
+  <run_depend>gmsl_frame_msg</run_depend>
+
+  <run_depend>rosbag_storage</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>image_transport</run_depend>
+-->
+
+  <export>
+    <nodelet plugin="${prefix}/nodelet_definition.xml"/>
+  </export>
+</package>
+
+

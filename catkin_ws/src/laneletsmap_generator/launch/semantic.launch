@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="top_down_projection" type="top_down_projection" name="top_down_projection" output="screen" required="true">
+
+    <rosparam param="point_clouds">["/velodyne/front/pointsB0B1A2A1A0_label_filtered,circle,100,6","/velodyne/front/pointsB0B1A2A1A0_label_filtered,point,255,1"] </rosparam>
+    <param name="bag_file" value="/ssd/2019-02-11_Dataset_year/semantic/finetuned_1.bag" />
+    <param name="min_intensity" value="0." />
+    <param name="max_intensity" value="12." />
+    <param name="output_image" value="/ssd/2019-02-11_Dataset_year/semantic/test.tif" />
+
+    <rosparam param="use_rings">[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,80, 81, 90, 91] </rosparam>
+    
+  </node>
+</launch>

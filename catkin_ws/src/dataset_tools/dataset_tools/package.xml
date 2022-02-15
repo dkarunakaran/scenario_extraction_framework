@@ -1,0 +1,27 @@
+<package format="2">
+  <name>dataset_tools</name>
+  <version>0.0.1</version>
+  <description>Some common tools that are used throughout the USYD dataset tools</description>
+  <maintainer email="stewart.worrall@sydney.edu.au">Stewart Worrall</maintainer>
+
+  <license>BSD</license>
+
+  <url>http://sydney.edu.au/acfr/its</url>
+
+  <author>Stewart Worrall</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>dataset_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>rosbag</depend>
+  <depend>gmsl_frame_msg</depend>
+  <depend>std_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2_sensor_msgs</depend>
+  <depend>image_transport</depend>
+  <depend>sensor_msgs</depend>
+  <depend>custom_point_types</depend>
+
+
+</package>

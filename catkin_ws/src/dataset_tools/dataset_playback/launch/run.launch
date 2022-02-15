@@ -1,0 +1,11 @@
+<launch>
+
+<arg name="ns" default="/" doc="Launch node in specified name space"/>
+<arg name="df" default="main_quad" doc="yaml filename containing the bus stops" />
+
+<node pkg="dataset_playback" type="dataset_playback" name="dataset_playback" output="screen" required="true" ns="$(arg ns)">
+     <rosparam file="$(find dataset_playback)/destination_files/$(arg df).yaml" command="load" />
+</node>
+</launch>
+
+

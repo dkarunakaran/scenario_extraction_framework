@@ -1,0 +1,5 @@
+<launch>
+	<arg name="result"/>
+	<param name="result" value="$(arg result)"/>
+	<node pkg="extract" type="extract.py" name="extract" output="screen"></node>
+</launch>

@@ -1,0 +1,7 @@
+<library path="lib/libh264_bag_playback">
+  <class name="dataset_toolkit/h264_bag_playback" type="dataset_toolkit::h264_bag_playback" base_class_type="nodelet::Nodelet">
+    <description> 
+      description of the nodelet goes here
+    </description>
+  </class>
+</library>

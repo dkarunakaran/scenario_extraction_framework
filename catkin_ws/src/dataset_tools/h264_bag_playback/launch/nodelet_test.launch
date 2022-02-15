@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="nodelet" type="nodelet" name="standalone_nodelet"  args="manager" output="screen" >
+    <param name="bag_file" value="/home/stew/data/callan-park/2019-04-15-14-37-06_callan_park_loop.bag" />
+  </node>
+  <node pkg="nodelet" type="nodelet" name="h264_bag_playback" args="load dataset_toolkit/h264_bag_playback standalone_nodelet" output="screen" required="true">
+  </node>
+
+</launch>
+
+
+

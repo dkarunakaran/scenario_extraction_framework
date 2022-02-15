@@ -1,0 +1,37 @@
+<launch>
+
+<node pkg="h264_bag_playback" type="h264_bag_playback_node" name="h264_bag_playback" output="screen" required="true">
+
+    <param name="limit_playback_speed" value="true" />
+    <param name="bag_file" value="$(arg bag_file_name)"/>
+    <param name="horizon_in_buffer" value="true" />
+    <param name="scale_playback_speed" value="1.0" />
+    <param name="percentage_start" value="0" />
+    <param name="percentage_end" value="100" />
+
+<!--
+    <param name="output_height" value="480" />
+    <param name="output_width" value="640" />
+    <param name="percentage_start" value="2" />
+    <param name="percentage_end" value="2.5" />
+  <param name="new_roll" value="0.0" />
+  <param name="new_pitch" value="0.0" />
+  <param name="new_yaw" value="-0.08" />
+-->
+  <!-- Optional playback start and end time in ISO format.
+       If the start is missing, it will play from the beginning
+       If the end is missing, it will play through to the end
+       On startup, the ROS INFO message will print the start and end times for the bag -->
+    <!--
+    <param name="time_start" value="2018-02-18T22:42:40.30" />
+    <param name="time_end" value="2018-02-18T22:43:45.30" />
+    <param name="percentage_start" value="0" />
+    <param name="percentage_end" value="7.2" />
+    <param name="horizon_in_buffer" value="true" />
+    -->
+
+</node>
+</launch>
+
+
+

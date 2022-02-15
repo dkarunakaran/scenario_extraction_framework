@@ -1,0 +1,23 @@
+<package format="2">
+  <name>laneletsmap_generator</name>
+  <version>1.0.0</version>
+  <description>Convert lidar sequence to a png.</description>
+  <maintainer email="d.karunakaran@acfr.usyd.edu.au">Dhanoop Karunakaran</maintainer>
+  <author>Dhanoop Karunakaran</author>
+  <license>BSD</license>
+  <url type="website">http://acfr</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>libpcl-all</depend>
+  <depend>pcl_ros</depend>
+  <depend>h264_bag_playback</depend>
+  <depend>roscpp</depend>
+  <depend>dataset_tools</depend>
+  <depend>std_msgs</depend>
+  <depend>tf</depend>
+  <depend>opencv</depend>
+  <depend>custom_point_types</depend>
+  <depend>tf_conversions</depend>
+</package>
+
+

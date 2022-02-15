@@ -1,0 +1,89 @@
+pose_set: 
+  marquee: 
+    position: 
+      x: -26577.5546875
+      y: 7968.74853516
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.89061803758
+      w: -0.454752142532
+  far_side_straight: 
+    position: 
+      x: -26602.84375
+      y: 7936.296875
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.890306876935
+      w: -0.455361026969
+  big_loop_start: 
+    position: 
+      x: -26616.3867188
+      y: 7916.15087891
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.908528871457
+      w: -0.417822079035
+  big_loop_end: 
+    position: 
+      x: -26624.9648438
+      y: 7938.70947266
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: -0.32902042207
+      w: 0.944322805962
+  far_side_return_straight: 
+    position: 
+      x: -26607.2285156
+      y: 7940.18310547
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.434960022109
+      w: 0.900449764933
+  opposite_marquee: 
+    position: 
+      x: -26584.2128906
+      y: 7968.94482422
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.47299731392
+      w: 0.881063868868
+  little_loop: 
+    position: 
+      x: -26576.4765625
+      y: 7988.52197266
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.438008259381
+      w: 0.898970947647
+relationships:
+  - from: marquee
+    to: far_side_straight
+  - from: far_side_straight
+    to: big_loop_start
+  - from: big_loop_start
+    to: big_loop_end
+  - from: big_loop_end
+    to: far_side_return_straight
+  - from: far_side_return_straight
+    to: opposite_marquee
+  - from: opposite_marquee
+    to: little_loop
+  - from: little_loop
+    to: marquee
+  - from: big_loop_end
+    to: big_loop_start
+

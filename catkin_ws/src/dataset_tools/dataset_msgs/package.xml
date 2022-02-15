@@ -1,0 +1,23 @@
+<package format="2">
+  <name>dataset_msgs</name>
+  <version>0.0.1</version>
+  <description>Messages used by the dataset tools ecosystem</description>
+  <maintainer email="stewart.worrall@sydney.edu.au">Stewart Worrall</maintainer>
+
+  <license>BSD</license>
+
+  <url>http://sydney.edu.au/acfr/its</url>
+
+  <author>Stewart Worrall</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+
+  <depend>message_runtime</depend>
+
+  <depend>std_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+
+
+</package>

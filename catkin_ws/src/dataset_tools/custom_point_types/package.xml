@@ -1,0 +1,18 @@
+<package format="2">
+  <name>custom_point_types</name>
+  <version>0.0.1</version>
+  <description>Some custom point types used throughout the ACFR datasets</description>
+  <maintainer email="stewart.worrall@sydney.edu.au">Stewart Worrall</maintainer>
+
+  <license>BSD</license>
+
+  <url>http://sydney.edu.au/acfr/its</url>
+
+  <author>Stewart Worrall</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>pcl_ros</depend>
+
+</package>

@@ -1,0 +1,37 @@
+<launch>
+    <node pkg="laneletsmap_generator" type="laneletsmap_generator" name="laneletsmap_generator" output="screen" required="true">
+        <!-- the point_clouds param is an array containing elements to draw, in a comma separated string
+            format: "topic_name,draw_type,alpha_value,point_size"-->
+        <rosparam param="point_clouds">["ibeo/lidar/dynamic,point,150,3",
+        "ibeo/lidar/static,point,150,3",
+        "/velodyne/front/pole_extractor/observations,1,10",
+        "/velodyne/front/points,circle,10,6",
+        "/velodyne/front/points,point,255,1",
+        "/velodyne/front/pole_extractor/points/all,circle,200,16",
+        "/velodyne/front/corner_extractor/points/all,circle,200,16",
+        "/pointcloud,point,255,1"] </rosparam>
+        <!-- size of a pixel (in centimeters) -->
+        <param name="cm_resolution" value="8"/>
+        <!-- frame to apply the top down projection - default is "odom" -->
+        <param name="projection_frame" value="odom"/>
+	<!--<param name="projection_frame" value="odom"/>-->
+        <!-- input and output files -->
+        <param name="bag_file" value="$(arg bag_file)"/>
+        <param name="output_image" value="$(arg output_image)" />
+        <!-- range of lidar intensity for colourising the projection - different lidars have different ranges of reported intensity -->
+        <param name="min_intensity" value="0.04" /><!--0.04-->
+        <param name="max_intensity" value="2." /><!--2-->
+        <!-- parameters for the h264 bag playback -->
+        <param name="percentage_start" value="0" />
+        <param name="percentage_end" value="100"/>
+        <param name="horizon_in_buffer" value="true" />
+        <param name="new_roll" value="0.0" />
+        <param name="new_pitch" value="0.0" />
+        <param name="new_yaw" value="-0.08" />
+        <!-- lidar ring numbers to use in the projection -->
+        <rosparam param="use_rings">[90, 91, 92, 93, 94] </rosparam>
+        <!--<rosparam param="use_rings">[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,80, 81, 90, 91, 92, 93, 94] </rosparam>-->
+        <param name="laneletsmap_file" value="$(arg laneletsmap_file)"/>
+        <param name="laneletToOD_file" value="/model/parameters/scenario_data/"/>
+    </node>
+</launch>

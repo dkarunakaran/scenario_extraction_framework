@@ -1,0 +1,23 @@
+<package format="2">
+  <name>dataset_playback</name>
+  <version>0.0.1</version>
+  <description>
+     Qt application for selecting a vehicle control trajectory
+  </description>
+  <maintainer email="s.worrall@acfr.usyd.edu.au">Stewart Worrall</maintainer>
+  <license>BSD</license>
+
+  <author>Stewart Worrall</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>qtbase5-dev</build_depend>
+  <depend>h264_bag_playback</depend>
+  <depend>dataset_tools</depend>
+  <depend>dataset_msgs</depend>
+  <depend>libqt5-core</depend>
+  <depend>libqt5-gui</depend>
+  <depend>libqt5-widgets</depend>
+  <depend>roscpp</depend>
+
+</package>

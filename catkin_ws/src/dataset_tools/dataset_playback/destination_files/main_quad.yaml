@@ -1,0 +1,74 @@
+pose_set:
+  grass_area_1:
+    position: 
+      x: 1287.037
+      y: -1114.272
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.753
+      w: 0.658
+  grass_area_2:
+    position:
+      x: 1283.105
+      y: -1087.832
+      z: 0.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.774
+      w: 0.633
+  grass_area_3:
+    position:
+      x: 1279.690
+      y: -1063.749
+      z: 0.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.765
+      w: 0.644
+  great_hall_steps:
+    position:
+      x: 1279.488
+      y: -1022.286
+      z: 0.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.680
+      w: 0.733
+  opp_grass_area_3:
+    position:
+      x: 1285.544
+      y: -1057.088
+      z: 0.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: -0.648
+      w: 0.761
+  opp_grass_area_2:
+    position:
+      x: 1289.282
+      y: -1080.578
+      z: 0.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: -0.651
+      w: 0.759
+relationships:
+  - from: grass_area_1
+    to: grass_area_2
+  - from: grass_area_2
+    to: grass_area_3
+  - from: grass_area_3
+    to: great_hall_steps
+  - from: great_hall_steps
+    to: opp_grass_area_3
+  - from: opp_grass_area_3
+    to: opp_grass_area_2
+  - from: opp_grass_area_2
+    to: grass_area_1

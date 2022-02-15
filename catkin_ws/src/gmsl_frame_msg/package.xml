@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gmsl_frame_msg</name>
+  <version>1.0.0</version>
+  <description>
+    Message definition for gmsl video stream
+  </description>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <depend>message_runtime</depend>
+
+  <maintainer email="weizhou1001@gmail.com">wei zhou</maintainer>
+  <license>BSD</license>
+
+</package>
