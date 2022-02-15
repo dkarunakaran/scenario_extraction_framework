@@ -44,17 +44,25 @@ bash helper.bash build_second_image /home/something/Documents/scenario_extractio
 
 ## Generate OpenX files
 Once we are in the container, follow below steps
+
+* Navigate the the parameters folder
 ```
 cd /validation/parameters/
 ```
+
+* Generate OpenX files such as OpenSCENARIO and OpendDRIVE files
 
 ```
 python3 generate_openx.py
 ```
 
+* This will execute OpenX files in Esmini OpenSCENARIO player. AT the moment we are running esmini headless as we haven't added GUI to docker.
+
 ```
 python3 esmini_data.py
 ```
+
+* Create some plots for visulaisation and you can find them in /validation/parameters/plots folder
 
 ```
 python3 plot.py
