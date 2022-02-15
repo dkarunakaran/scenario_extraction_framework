@@ -30,9 +30,22 @@ bash lz4_streamdecode_error_fix.bash
 ```
 catkin  build
 ```
-If we have all 12 packages got installed and then good to go for next step to extract the sceanrios
+If we have all 12 packages got installed and then good to go for next step to extract the scenarios.
 
 
+## Run roslaunch file to extract scenarios
+* Navigate to /validation/catkin_ws
+```
+cd /validation/catkin_ws
+```
+
+* Run roslaunch to extract scenario paramters from rosbag file
+
+```
+roslaunch launch/validation_dataset.launch bag_file:=<location of the bag file> output_image:=/validation/top_view_image_of_lanes.png laneletsmap_file:=/validation/map.osm
+```
+
+* If everythin goes smooth,  files with extension 'cutin' and 'cutout' have been created in the /validation/parameters/scenario_data/
 
 
 ## Steps to setup the second docker container for generating OpenX files

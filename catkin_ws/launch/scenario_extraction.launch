@@ -9,19 +9,19 @@
     <param name="odometry" value="ibeo/odometry" />
     <param name="resume" value="false" />
     <param name="standalone_run" value="true" />
-    <param name="centerline_json_file" value="/model/centerline.json" />
-    <param name="objects_json_file" value="/model/objects.json" />
-    <param name="centerline_json_file" value="/model/centerline.json" />
-    <param name="scenario_json_file" value="/model/scenario.json" />
-    <param name="cars_frenet_json_file" value="/model/cars_frenet.json" />
-    <param name="ego_frenet_json_file" value="/model/ego_frenet.json" />
-    <param name="lanelet_file" value="/model/map.osm" />
+    <param name="centerline_json_file" value="/validation/centerline.json" />
+    <param name="objects_json_file" value="/validation/objects.json" />
+    <param name="centerline_json_file" value="/validation/centerline.json" />
+    <param name="scenario_json_file" value="/validation/scenario.json" />
+    <param name="cars_frenet_json_file" value="/validation/cars_frenet.json" />
+    <param name="ego_frenet_json_file" value="/validation/ego_frenet.json" />
+    <param name="lanelet_file" value="/validation/map.osm" />
   </node>
 	<node pkg="feature_model" type="feature_model.py" name="feature_model" output="screen">
-    <param name="scenario_json_file" value="/model/scenario.json" />
-    <param name="cars_frenet_json_file" value="/model/cars_frenet.json" />
-    <param name="ego_frenet_json_file" value="/model/ego_frenet.json" />
-    <param name="parameter_json_dir" value="/model/parameters/scenario_data/" />    
+    <param name="scenario_json_file" value="/validation/scenario.json" />
+    <param name="cars_frenet_json_file" value="/validation/cars_frenet.json" />
+    <param name="ego_frenet_json_file" value="/validation/ego_frenet.json" />
+    <param name="parameter_json_dir" value="/validation/parameters/scenario_data/" />    
   </node>
 </launch>
 
