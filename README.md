@@ -96,6 +96,6 @@ python3 esmini_data.py
 python3 plot.py
 ```
 
-## Sytem Requirement
+## Sytem requirement
 
 Tested it on Ubuntu 18.04 and 20.04 as the host pc.
