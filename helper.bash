@@ -6,80 +6,53 @@ if [ -z "$1" ]
     echo "No first argument supplied, Select one of the below"
     echo "----------------------------------------------------"
     echo ""
-    echo "start_server: Pull and start the carla server docker" 
+    echo "start_first_container: Start second docker container"
     echo ""
-    echo "stop_server: Stop the carla server docker" 
-    echo ""
-    echo "start_client: Start the client docker"
-    echo ""
-    echo "resume_client: Resume the already started client docker"
-    echo ""
-    echo "stop_client: Stop the client docker"
+    echo "start_second_container: Start second docker container"
     echo ""
     echo "remove_untagged: Remove the untagged images"
     echo ""
-    echo "build_client_i: Build the client docker image"
+    echo "build_first_image: Build the first docker image"
     echo ""
-    echo "build_client_c: Build the client docker container"
+    echo "build_first_imgage: Build the second docker image"
     echo ""
-    echo "build_rviz_i: Build the rviz docker image"
+    echo "create_first_container: Build the first docker container"
     echo ""
-    echo "run_rviz_c: Build and run the rviz docker container"
+    echo "create_second_container: Build the second docker container"
     echo ""
     echo "**************************************************************"
     echo ""
-    echo "And pass second argument as well: 'laptop or monolith'"
+    echo "And pass second argument as well: 'full path of local folder of the
+    project'"
     echo ""
+    echo "Example: bash helper.bash build_first_image /home/Documents/scenario_extraction_framework"
     exit 1
 fi
 
 if [ -z "$2" ]
   then
-    echo "No second argument supplied, pass 'laptop or monolith'"
+    echo "No location argument supplied"
     exit 1
 fi
 
-server_docker_c=carla-sim
-client_docker_i=validation_i
-client_docker_c=validation_c
-rviz_docker_i=validation_rviz_i
-rviz_docker_c=validation_rviz_c
-home_volume=/home/beastan/Documents/phd/scenario_extraction:/model
-data_volume=/home/beastan/Documents/phd/dataset:/data
+first_docker_i=validation_first_i
+first_docker_c=validation_first_c
+second_docker_i=validation_second_i
+second_docker_c=validation_second_c
+home_volume="$2":/validation
+#data_volume=/home/beastan/Documents/phd/dataset:/data
 echo "Running '$1' and '$2' options"
 
-# Start the carla server
-if [[ $1 == "start_server" ]]; then
-	docker pull carlasim/carla:0.9.8
-	if [[ $2 == "laptop" ]]; then
-  		docker run --name=$server_docker_c -d=true --net=host --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=0 carlasim/carla:0.9.8 /bin/bash CarlaUE4.sh
-	fi
-	
-	if [[ $2 == "monolith" ]]; then
-  		docker run --name=$server_docker_c -d=true --net=host --gpus 2 carlasim/carla:0.9.8 /bin/bash CarlaUE4.sh
-	fi
+# Start the first docker container
+if [[ $1 == "start_first_container" ]]; then
+  docker start $first_docker_c
+	docker exec -it $first_docker_c /bin/bash
 fi
 
-# Stop the carla server
-if [[ $1 == "stop_server" ]]; then
-        docker stop $server_docker_c
-        docker rm $server_docker_c
-fi
-
-# Start the client docker
-if [[ $1 == "start_client" ]]; then
-        docker start $client_docker_c
-	docker exec -it $client_docker_c /bin/bash
-fi
-
-# Stop the client docker
-if [[ $1 == "stop_client" ]]; then
-        docker stop $client_docker_c
-fi
-
-# Resume the client docker
-if [[ $1 == "resume_client" ]]; then
-	docker exec -it $client_docker_c /bin/bash
+# Start the second docker container
+if [[ $1 == "start_second_container" ]]; then
+  docker start $second_docker_c
+	docker exec -it $second_docker_c /bin/bash
 fi
 
 # Remove untagged docker images
@@ -87,47 +60,26 @@ if [[ $1 == "remove_untagged" ]]; then
 	docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)
 fi
 
-# Build docker client image
-if [[ $1 == "build_client_i" ]]; then
-	cp -r ~/.ssh .
-        	
-	# Build the image
-        docker build -t $client_docker_i .
-        rm -rf .ssh
+# Build first docker image
+if [[ $1 == "build_first_image" ]]; then
+  docker build -t $first_docker_i .
 fi
 
-# Build docker client container
-if [[ $1 == "build_client_c" ]]; then
-	if [[ $2 == "laptop" ]]; then
-  		docker run --net=host -d -v $home_volume -v $data_volume --name $client_docker_c $client_docker_i
-	fi
-
-	if [[ $2 == "monolith" ]]; then
-  		docker run --net=host -d -v $home_volume --name $client_docker_c $client_docker_i
-	fi
+# Build second docker image
+if [[ $1 == "build_second_image" ]]; then
+  docker build -t $second_docker_i .
 fi
 
-# Build Rviz docker image
-if [[ $1 == "build_rviz_i" ]]; then
-	cp -r ~/.ssh .
-
-	# Build the image
-	docker build -t $rviz_docker_i .
-	rm -rf .ssh
+# create first docker container
+if [[ $1 == "create_first_container" ]]; then
+  		docker run --net=host -d -v $home_volume --name $first_docker_c $first_docker_i
 fi
 
-# Run Rviz docker container
-if [[ $1 == "run_rviz_c" ]]; then
-	xhost +local:docker
-	if [[ $2 == "laptop" ]]; then
-        	docker run -it --rm --privileged --net=host --env=NVIDIA_VISIBLE_DEVICES=all --env=NVIDIA_DRIVER_CAPABILITIES=all --env=DISPLAY --env=QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v $home_volume --gpus 0 $rviz_docker_i /bin/bash
-
-	fi
-
-        if [[ $2 == "monolith" ]]; then
-        	docker run -it --rm --privileged --net=host --env=NVIDIA_VISIBLE_DEVICES=all --env=NVIDIA_DRIVER_CAPABILITIES=all --env=DISPLAY --env=QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix --gpus 0 $rviz_docker_i /bin/bash
-	fi
+# create second docker container
+if [[ $1 == "create_second_container" ]]; then
+  		docker run --net=host -d -v $home_volume --name $second_docker_c $second_docker_i
 fi
+
 
 
 
