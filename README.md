@@ -40,3 +40,22 @@ bash helper.bash build_second_image /home/something/Documents/scenario_extractio
 ```
  bash helper.bash start_second_container <full path of local project folder>
 ```
+
+
+## Generate OpenX files
+Once we are in the container, follow below steps
+```
+cd /validation/parameters/
+```
+
+```
+python3 generate_openx.py
+```
+
+```
+python3 esmini_data.py
+```
+
+```
+python3 plot.py
+```
