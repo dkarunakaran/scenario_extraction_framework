@@ -38,12 +38,12 @@ class SEScenarioObjectState(ctypes.Structure):
     ]
 
 if sys.platform == "linux" or sys.platform == "linux2":
-    se = ctypes.CDLL("/home/beastan/Documents/phd/esmini-bin_ubuntu/bin/libesminiLib.so")
+    se = ctypes.CDLL("esmini-bin_ubuntu/bin/libesminiLib.so")
 else:
     print("Unsupported platform: {}".format(sys.platform))
     quit()
 
-loc = '/home/beastan/Documents/phd/scenario_extraction/parameters/'
+loc = ''
 _dir = os.listdir(loc+'scenario_data/')
 all_data = []
 for _file in _dir:
