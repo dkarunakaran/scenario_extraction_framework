@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ibeo_object_msg</name>
+  <version>0.0.0</version>
+  <description>
+    Message definition for ibeo object data
+  </description>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>message_generation</depend>
+  <depend>message_runtime</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>shape_msgs</depend>
+
+  <maintainer email="stew.worrall@gmail.com">wei zhou</maintainer>
+  <license>BSD</license>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+
+
+</package>

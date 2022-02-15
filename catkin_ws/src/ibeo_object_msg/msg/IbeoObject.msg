@@ -1,0 +1,11 @@
+Header header
+uint32 object_id
+uint8 object_class
+uint16 object_class_uncertainty
+float32 object_age
+float32 object_class_age
+bool mobile
+bool motion_model_validated
+geometry_msgs/PoseWithCovariance pose
+geometry_msgs/TwistWithCovariance twist
+shape_msgs/SolidPrimitive shape
