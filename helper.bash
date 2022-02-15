@@ -6,32 +6,30 @@ if [ -z "$1" ]
     echo "No first argument supplied, Select one of the below"
     echo "----------------------------------------------------"
     echo ""
-    echo "start_first_container: Start second docker container"
+    echo "build_first_image : Build the first docker image"
     echo ""
-    echo "start_second_container: Start second docker container"
+    echo "build_first_imgage : Build the second docker image"
     echo ""
-    echo "remove_untagged: Remove the untagged images"
+    echo "create_first_container : Build the first docker container"
     echo ""
-    echo "build_first_image: Build the first docker image"
+    echo "create_second_container : Build the second docker container"
     echo ""
-    echo "build_first_imgage: Build the second docker image"
+    echo "start_first_container : Start second docker container"
     echo ""
-    echo "create_first_container: Build the first docker container"
+    echo "start_second_container : Start second docker container"
     echo ""
-    echo "create_second_container: Build the second docker container"
+    echo "remove_untagged : Remove the untagged images"
     echo ""
     echo "**************************************************************"
     echo ""
     echo "And pass second argument as well: 'full path of local folder of the
-    project'"
-    echo ""
-    echo "Example: bash helper.bash build_first_image /home/Documents/scenario_extraction_framework"
+    project and expected path is: "&& pwd
     exit 1
 fi
 
 if [ -z "$2" ]
   then
-    echo "No location argument supplied"
+    echo "No location path is supplied and expected path is: "&& pwd
     exit 1
 fi
 
@@ -62,12 +60,12 @@ fi
 
 # Build first docker image
 if [[ $1 == "build_first_image" ]]; then
-  docker build -t $first_docker_i .
+  docker build -t $first_docker_i -f Dockerfile.first .
 fi
 
 # Build second docker image
 if [[ $1 == "build_second_image" ]]; then
-  docker build -t $second_docker_i .
+  docker build -t $second_docker_i -f Dockerfile.second .
 fi
 
 # create first docker container
