@@ -130,3 +130,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+catkin_ws/.catkin_tools/
+catkin_ws/devel/
+catkin_ws/logs/

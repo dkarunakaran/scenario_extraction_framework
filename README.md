@@ -21,6 +21,20 @@ bash helper.bash build_first_image /home/something/Documents/scenario_extraction
  bash helper.bash start_first_container <full path of local project folder>
 ```
 
+* Once you are in container, naviagate to /validation/ and run the following code
+```
+bash lz4_streamdecode_error_fix.bash 
+```
+
+* Then change dir to catkin_ws, and run following code to build the ROS packages
+```
+catkin  build
+```
+If we have all 12 packages got installed and then good to go for next step to extract the sceanrios
+
+
+
+
 ## Steps to setup the second docker container for generating OpenX files
 * Build the first docker image
 ```
@@ -40,6 +54,7 @@ bash helper.bash build_second_image /home/something/Documents/scenario_extractio
 ```
  bash helper.bash start_second_container <full path of local project folder>
 ```
+
 
 
 ## Generate OpenX files
