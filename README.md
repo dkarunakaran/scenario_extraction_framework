@@ -102,6 +102,6 @@ Tested it on Ubuntu 18.04 and 20.04 as the host pc.
 
 ## More details about the framework code
 
-There are 3 ros nodes in the first stage: lanepoint filetring & lane construction, scenario detection, and scenario parameter extraction. Lanepoint filetring & lane construction node is responsible for filtering the lane points, then build lanes and convert them to lanelet representation. Sceanrio detection node identifies the scenarios such as cut-in and cut-out, then mark it as scenarios. Also it stores all the position data of ego vehicle and other vehicles in frenet frame. The last node is reposible for extracting the required parameters from the marked scenarios. 
+There are 3 ros nodes in the first stage: lanepoint filetring & lane construction, scenario detection, and scenario parameter extraction. Lanepoint filetring & lane construction node is responsible for filtering the lane points, then build lanes and convert them to lanelet representation. It is called laneletsmap_generator. Sceanrio detection node identifies the scenarios such as cut-in and cut-out, then mark it as scenarios. Also it stores all the position data of ego vehicle and other vehicles in frenet frame. The name of the node is extraction. The last node, feature_model is reposible for extracting the required parameters from the marked scenarios. 
 
 The second stage has files for generating OpenX files.
