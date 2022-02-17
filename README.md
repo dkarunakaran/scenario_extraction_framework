@@ -1,6 +1,8 @@
 # Scenario Extraction Framework
 This is a code base for the scenario extraction framework paper. There are two stages in code base: scenario extraction from real-world data and OpenX files generation. We have two docker containers for first and second stage. In the first docker container, ROS Melodic and all other dependencies to run the first stage is added. ROS melodic runs on python2, but second stage require python3. Once we have the scenario extraction result finished in the first stage, we use the second docker container for generating the OpenX files.
 
+There are 3 ros nodes in the first stage: lanepoint filetring & lane construction, scenario detection, and scenario parameter extraction. Lanepoint filetring & lane construction node is responsible for filtering the lane points, then build lanes and convert them to lanelet representation. It is called laneletsmap_generator. Sceanrio detection node identifies the scenarios such as cut-in and cut-out, then mark it as scenarios. Also it stores all the position data of ego vehicle and other vehicles in frenet frame. The name of the node is extraction. The last node, feature_model is reposible for extracting the required parameters from the marked scenarios. 
+
 ## Steps to setup the first docker container for extracting the scenario from the rosbag file
 * Build the first docker image
 ```
@@ -100,8 +102,3 @@ python3 plot.py
 
 Tested it on Ubuntu 18.04 and 20.04 as the host pc.
 
-## More details about the framework code
-
-There are 3 ros nodes in the first stage: lanepoint filetring & lane construction, scenario detection, and scenario parameter extraction. Lanepoint filetring & lane construction node is responsible for filtering the lane points, then build lanes and convert them to lanelet representation. It is called laneletsmap_generator. Sceanrio detection node identifies the scenarios such as cut-in and cut-out, then mark it as scenarios. Also it stores all the position data of ego vehicle and other vehicles in frenet frame. The name of the node is extraction. The last node, feature_model is reposible for extracting the required parameters from the marked scenarios. 
-
-The second stage has files for generating OpenX files.
