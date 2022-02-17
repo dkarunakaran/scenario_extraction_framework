@@ -1,18 +1,18 @@
 <?xml version="1.0" ?>
 <OpenSCENARIO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="OpenScenario.xsd">
-    <FileHeader description="cutinScenario" author="Dhanoop" revMajor="1" revMinor="1" date="2022-02-16T22:29:08.420115"/>
+    <FileHeader description="cutinScenario" author="Dhanoop" revMajor="1" revMinor="1" date="2022-02-17T23:16:56.924296"/>
     <ParameterDeclarations>
         <ParameterDeclaration name="$egoVehicle" parameterType="string" value="hero"/>
         <ParameterDeclaration name="$egoVelocityInit" parameterType="double" value="2.905555486679077"/>
-        <ParameterDeclaration name="$egoStartPos" parameterType="double" value="378.84998001828956"/>
+        <ParameterDeclaration name="$egoStartPos" parameterType="double" value="382.4453196573702"/>
         <ParameterDeclaration name="$egoStartLane" parameterType="double" value="-2"/>
         <ParameterDeclaration name="$adversaryVehicle" parameterType="string" value="adversary"/>
         <ParameterDeclaration name="$adversaryVelocityInit" parameterType="double" value="12.665555715560913"/>
-        <ParameterDeclaration name="$adversaryPos" parameterType="integer" value="375.1480766166575"/>
+        <ParameterDeclaration name="$adversaryPos" parameterType="integer" value="378.1085592582344"/>
         <ParameterDeclaration name="$adversaryLane" parameterType="double" value="-3"/>
         <ParameterDeclaration name="$adversaryCutinSpeed" parameterType="double" value="40"/>
         <ParameterDeclaration name="$adversaryStartDiff" parameterType="double" value="-3.70190340163208"/>
-        <ParameterDeclaration name="$adversaryCutinTriggerDist" parameterType="double" value="22.960462782024706"/>
+        <ParameterDeclaration name="$adversaryCutinTriggerDist" parameterType="double" value="23.960462782024706"/>
         <ParameterDeclaration name="$adversaryCutinTime" parameterType="double" value="4"/>
         <ParameterDeclaration name="$lanechangeCarId" parameterType="double" value="180"/>
     </ParameterDeclarations>
@@ -30,7 +30,7 @@
                 <ParameterDeclarations/>
                 <BoundingBox>
                     <Center x="1.5" y="0" z="0.9"/>
-                    <Dimensions width="2.1" length="4.5" height="1.8"/>
+                    <Dimensions width="2.1" length="3.5" height="1.8"/>
                 </BoundingBox>
                 <Performance maxSpeed="100" maxDeceleration="10" maxAcceleration="10"/>
                 <Axles>
@@ -56,7 +56,7 @@
                 <ParameterDeclarations/>
                 <BoundingBox>
                     <Center x="1.4" y="0.0" z="0.9"/>
-                    <Dimensions width="2.0" length="5.0" height="1.8"/>
+                    <Dimensions width="2.1" length="3.5" height="1.8"/>
                 </BoundingBox>
                 <Performance maxSpeed="100" maxDeceleration="10" maxAcceleration="10"/>
                 <Axles>
@@ -172,7 +172,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="1.2777777910232544"/>
                                             </SpeedActionTarget>
@@ -219,7 +219,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="11.847777485847473"/>
                                             </SpeedActionTarget>
@@ -266,7 +266,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="0.519444465637207"/>
                                             </SpeedActionTarget>
@@ -313,7 +313,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="12.379444122314453"/>
                                             </SpeedActionTarget>
@@ -360,7 +360,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="0.6000000238418579"/>
                                             </SpeedActionTarget>
@@ -407,7 +407,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="11.600000023841858"/>
                                             </SpeedActionTarget>
@@ -454,7 +454,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="2.3694443702697754"/>
                                             </SpeedActionTarget>
@@ -501,7 +501,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="10.60944414138794"/>
                                             </SpeedActionTarget>
@@ -548,7 +548,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="4.050000190734863"/>
                                             </SpeedActionTarget>
@@ -595,7 +595,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="10.03000020980835"/>
                                             </SpeedActionTarget>
@@ -642,7 +642,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="4.050000190734863"/>
                                             </SpeedActionTarget>
@@ -689,7 +689,7 @@
                                 <PrivateAction>
                                     <LongitudinalAction>
                                         <SpeedAction>
-                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.01" dynamicsDimension="time"/>
+                                            <SpeedActionDynamics dynamicsShape="sinusoidal" value="0.1" dynamicsDimension="time"/>
                                             <SpeedActionTarget>
                                                 <AbsoluteTargetSpeed value="10.03000020980835"/>
                                             </SpeedActionTarget>
