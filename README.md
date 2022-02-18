@@ -102,3 +102,7 @@ python3 plot.py
 
 Tested it on Ubuntu 18.04 and 20.04 as the host pc.
 
+## Sample data
+Sample data can be found here: https://drive.google.com/drive/folders/1gsqGG5PrW-1_k2a9Ulu-Tquj_oUIe5wQ?usp=sharing
+
+
